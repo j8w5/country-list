@@ -23,3 +23,15 @@ class Country extends Umpirsky\ListGenerator\Importer\Importer
     new Country(),
     __DIR__.'/../data'
 ))->run();
+
+
+/* generate index */
+$jsonString = json_encode(
+    (new Country())->getLanguages()
+);
+file_put_contents('../data/index.json', $jsonString);
+
+
+
+
+
